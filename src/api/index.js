@@ -16,7 +16,7 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   config => {
-    // 发送请求前检查重复请求
+    
   },
   config => {
     
