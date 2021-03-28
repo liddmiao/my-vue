@@ -6,8 +6,9 @@
   "main": "src/mian.js",
   "private": true,
   "scripts": {
-    "serve": "webpack serve",
-    "build": "webpack"
+    "serve": "concurrently \"webpack serve\" \"npm:mock\"",
+    "build": "webpack",
+    "mock": "cd mock && nodemon index.js"
   },
   "dependencies": {},
   "devDependencies": {
@@ -18,6 +19,7 @@
     "axios": "^0.21.1",
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^3.0.0",
+    "concurrently": "^6.0.0",
     "css-loader": "^5.2.0",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.3.9",

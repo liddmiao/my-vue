@@ -13,7 +13,7 @@ module.exports = {
       '/': 'http://localhost:3001'
     },
     open: true,
-    openPage: '/index.html',
+    openPage: 'index.html',
     writeToDisk: true //将打包后的代码写入磁盘而不是放入内存，避免每次启动服务dist会被清空
   },
   entry: {

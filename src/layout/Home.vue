@@ -11,7 +11,7 @@
       MenuList
     },
     created() {
-      this.$http.get('/test').then(res =>{
+      this.$http.post('/test',{}).then(res =>{
         console.log(res)
       })
     }
