@@ -1,30 +1,18 @@
-const http = require('http')
-const fs = require('fs')
 const path = require('path')
+const Koa = require('koa')
+const fileServer = require('koa-static')
+const bodyParser = require('koa-bodyparser')
+const Router = require('koa-router')
+const getRoutes = require('./controllers/routes')
 
+const app = new Koa()
 
-http.createServer((req, res) => {
-  if (req.url == '/') {
-    const home = fs.readFileSync('../dist/index.html')
-    res.statusCode = 200
-    res.setHeader('Content-Type', 'text/html')
-    res.end(home)
-  } else if (req.url == '/test') {
-    res.statusCode = 200
-    res.end('hello')
-  } else if (req.url =='/favicon.ico'){
-    res.statusCode = 404
-    res.end()
-  }else {
-    const url = req.url
-    const filepath = path.resolve(__dirname, '../dist/' + url)
-    const file = fs.readFileSync(filepath)
-    if(url.indexOf('js') > -1) {
-      res.setHeader('Content-Type', 'application/x-javascript')
-    } else {
-      res.setHeader('Content-Type', 'text/css')
-    }
-    res.statusCode = 200
-    res.end(file)
-  }
-}).listen(3001)
+app.use(bodyParser())
+// 静态文件服务
+app.use(fileServer(path.resolve(__dirname, '../dist/')))
+
+const router = new Router()
+router.get('/getRoutes', getRoutes)
+app.use(router.routes())
+
+app.listen('3001')

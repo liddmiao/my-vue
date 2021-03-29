@@ -1,0 +1,47 @@
+openapi: 3.0.0
+info:
+  title: My Vue Mock API
+  version: 1.0.0
+  description: mock api for my vue project
+servers:
+  - url: /application
+tags: 
+  - name: routes
+    description: get routes info from backend
+paths:
+  /getRoutes:
+    get: 
+      tags:
+        - routes
+      operationId: getRoutes
+      summary: get router info
+      description: get routes info from backend
+      responses:
+        200:
+          description: SUCCESS
+          content: 
+            application/json:
+              schema:
+                type: object
+                properties:
+                  code: 
+                    type: integer
+                    format: int32
+                  data: 
+                    type: array
+                    items: 
+                      $ref: '#/components/schemas/route'
+                          
+components:
+  schemas:
+    route:
+      type: object
+      properties:
+        name:
+          type: string
+        path: 
+          type: string
+        children:
+          type: array
+          items:
+            $ref: '#/components/schemas/route'

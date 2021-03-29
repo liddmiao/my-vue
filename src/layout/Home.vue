@@ -11,7 +11,7 @@
       MenuList
     },
     created() {
-      this.$http.post('/test',{}).then(res =>{
+      this.$http.get('/getRoutes').then(res =>{
         console.log(res)
       })
     }

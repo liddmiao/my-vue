@@ -15,7 +15,7 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_MenuList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/MenuList */ \"./src/layout/components/MenuList.vue\");\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  components: {\n    MenuList: _components_MenuList__WEBPACK_IMPORTED_MODULE_0__.default\n  },\n  created: function created() {\n    this.$http.post('/test', {}).then(function (res) {\n      console.log(res);\n    });\n  }\n});\n\n//# sourceURL=webpack://practice-vue-project/./src/layout/Home.vue?./node_modules/babel-loader/lib/index.js??clonedRuleSet-2%5B0%5D.rules%5B0%5D.use!./node_modules/vue-loader/lib/index.js??vue-loader-options");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_MenuList__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/MenuList */ \"./src/layout/components/MenuList.vue\");\n//\n//\n//\n//\n//\n//\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  components: {\n    MenuList: _components_MenuList__WEBPACK_IMPORTED_MODULE_0__.default\n  },\n  created: function created() {\n    this.$http.get('/getRoutes').then(function (res) {\n      console.log(res);\n    });\n  }\n});\n\n//# sourceURL=webpack://practice-vue-project/./src/layout/Home.vue?./node_modules/babel-loader/lib/index.js??clonedRuleSet-2%5B0%5D.rules%5B0%5D.use!./node_modules/vue-loader/lib/index.js??vue-loader-options");
 
 /***/ }),
 
