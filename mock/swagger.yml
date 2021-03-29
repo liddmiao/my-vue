@@ -41,6 +41,8 @@ components:
           type: string
         path: 
           type: string
+        active: 
+          type: boolean
         children:
           type: array
           items:

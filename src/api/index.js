@@ -24,7 +24,10 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   config => {
-    return config
+    if (config.data && config.data.code === 200) {
+      return config.data.data
+    }
+    return {}
   },
   config => {
     

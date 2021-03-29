@@ -44,10 +44,15 @@ module.exports = {
             plugins: ['@babel/plugin-transform-runtime']
           }
         }
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        loader: 'file-loader'
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'practiceVueProject',
       filename: 'index.html',
@@ -57,7 +62,6 @@ module.exports = {
       filename: 'css/[name].css',
       chunkFilename: 'css/chunk.[chunkhash].css'
     }),
-    new CleanWebpackPlugin(),
     new VueLoaderPlugin()
   ],
   resolve: {

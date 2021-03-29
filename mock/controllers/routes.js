@@ -4,7 +4,8 @@ const getRoutes = ctx => {
     data: [
       {
         name: '首页',
-        path: '/'
+        path: '/',
+        active: true
       },
       {
         name: '导航1',
