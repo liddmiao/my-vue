@@ -28,7 +28,7 @@
         <el-menu-item
           v-else
           :key="item.path"
-          :index="String(idx)"
+          :index="item.path"
         >
           <i class="el-icon-menu"></i>
           <span slot="title">{{item.name}}</span>
@@ -52,7 +52,7 @@
     },
     methods: {
       handleOpen(key, path) {
-        console.log(key, path)
+        this.$router.push('111')
       }
     }
   }

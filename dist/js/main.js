@@ -619,7 +619,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue_
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ \"./node_modules/vue-router/dist/vue-router.esm.js\");\n\n\nvue__WEBPACK_IMPORTED_MODULE_0___default().use(vue_router__WEBPACK_IMPORTED_MODULE_1__.default);\nvar router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({\n  routes: [{\n    path: '/',\n    name: 'home',\n    component: function component() {\n      return __webpack_require__.e(/*! import() */ \"src_layout_Home_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/layout/Home */ \"./src/layout/Home.vue\"));\n    }\n  }]\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack://practice-vue-project/./src/router/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.js\");\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ \"./node_modules/vue-router/dist/vue-router.esm.js\");\n\n\nvue__WEBPACK_IMPORTED_MODULE_0___default().use(vue_router__WEBPACK_IMPORTED_MODULE_1__.default);\ndebugger;\nvar router = new vue_router__WEBPACK_IMPORTED_MODULE_1__.default({\n  routes: [{\n    path: '/',\n    name: 'home',\n    component: function component() {\n      return __webpack_require__.e(/*! import() */ \"src_layout_Home_vue\").then(__webpack_require__.bind(__webpack_require__, /*! @/layout/Home */ \"./src/layout/Home.vue\"));\n    }\n  }]\n});\n/* harmony default export */ __webpack_exports__[\"default\"] = (router);\n\n//# sourceURL=webpack://practice-vue-project/./src/router/index.js?");
 
 /***/ }),
 
@@ -2138,7 +2138,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "js/chunk." + "7f220ba1351ba8994319" + ".js";
+/******/ 			return "js/chunk." + "750b4466e228117e2623" + ".js";
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -2147,7 +2147,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		// This function allow to reference all chunks
 /******/ 		__webpack_require__.miniCssF = function(chunkId) {
 /******/ 			// return url for filenames based on template
-/******/ 			return "css/chunk." + "7f220ba1351ba8994319" + ".css";
+/******/ 			return "css/chunk." + "750b4466e228117e2623" + ".css";
 /******/ 		};
 /******/ 	}();
 /******/ 	
