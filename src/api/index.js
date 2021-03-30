@@ -2,7 +2,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 const service = axios.create({
-  baseURL: window.location.origin,
+  baseURL: window.location.origin + '/application',
   timeout: 30 * 60 * 1000,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
