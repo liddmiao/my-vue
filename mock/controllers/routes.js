@@ -3,11 +3,6 @@ const getRoutes = (req, res) => {
     code: 200,
     data: [
       {
-        name: '首页',
-        path: '/',
-        active: true
-      },
-      {
         name: '导航1',
         path: '/nav1',
         children: [
