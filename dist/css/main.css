@@ -1,3 +1,6 @@
+.my-vue-home .el-row[data-v-5f90c10a] {
+  margin: 0 !important;
+}
 @charset "UTF-8";
 .el-pagination--small .arrow.disabled, .el-table .hidden-columns, .el-table td.is-hidden > *, .el-table th.is-hidden > *, .el-table--hidden {
   visibility: hidden;

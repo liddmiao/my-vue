@@ -39,6 +39,7 @@
 </template>
 
 <script>
+  import initRoutes from '@/router/calcAsyncRoutes.js'
   export default {
     data() {
       return {
@@ -48,6 +49,9 @@
     created() {
       this.$http.get('/getRoutes').then(res =>{
         this.routes = res
+        const routelist = initRoutes(res)
+        this.$router.addRoutes(routelist)
+        console.log(this.$router)
       })
     },
     methods: {

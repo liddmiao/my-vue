@@ -15,7 +15,7 @@ export default [
       {
         path: 'home/:viewId',
         name: 'home_viewId',
-        component: _import('transfer/TransferIndex')
+        component: _import('components/Transfer')
       }
     ]
   }
