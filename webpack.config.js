@@ -10,7 +10,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
     port: 3000,
     proxy: {
-      '/': 'http://localhost:3001'
+      '/': 'http://localhost:3001/'
     },
     open: true,
     openPage: 'index.html',
