@@ -1,3 +1,22 @@
+.menu-list[data-v-ae6a156c] {
+  height: auto;
+}
+.menu-list .menu-item[data-v-ae6a156c] {
+  height: auto;
+  padding: 10px 0;
+  background: #343848;
+  color: #c1cadc;
+}
+.menu-list .menu-item.active[data-v-ae6a156c] {
+  color: #fff;
+  background: #5582f3;
+}
+.menu-list .menu-item i[data-v-ae6a156c] {
+  font-size: 22px;
+}
+.menu-list .menu-item span[data-v-ae6a156c] {
+  font-size: 13px;
+}
 .my-vue-home .el-row[data-v-5f90c10a] {
   margin: 0 !important;
 }

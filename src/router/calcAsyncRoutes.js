@@ -5,14 +5,12 @@ function initRoutesChildren (routes) {
   let childrenRoutes = []
   routes.forEach(route => {
     let routeItem = {
-      name: route.name,
-      path: route.path,
       component: () => _import('components/Transfer')
     }
     if(route.children && route.children.length > 0) {
       routeItem.children = initRoutesChildren(route.children)
     }
-    childrenRoutes.push(routeItem)
+    childrenRoutes.push(Object.assign({}, routeItem, route))
   })
   return childrenRoutes
 }
@@ -23,14 +21,12 @@ export default function initRoutes (routes) {
   routes.forEach(route => {
     // 路由项的模板
     let routeItem = {
-      name: route.name,
-      path: route.path,
       component: Home
     }
     if (route.children && route.children.length > 0) {
       routeItem.children = initRoutesChildren(route.children)
     }
-    asyncRoute.push(routeItem)
+    asyncRoute.push(Object.assign({}, routeItem, route))
   })
   return asyncRoute
 }

@@ -1,66 +1,64 @@
 <template>
   <div class="menu-list">
-    <el-menu 
-      class="el-menu-vertical-demo"
-      @open="handleOpen"
-    >
-      <template
-        v-for="(item, idx) in routes">
-        <el-submenu
-          v-if="item.children && item.children.length > 0"
-          :key="item.path"
-          :index="String(idx)"
-        >
-          <template slot="title">
-            <i class="el-icon-location"></i>
-            <span>{{item.name}}</span>
-          </template>
-          <el-menu-item-group>
-            <el-menu-item
-              v-for="(child, cidx) in item.children"
-              :key="child.path"
-              :index="`${idx}-${cidx}`"
-            >
-              {{child.name}}
-            </el-menu-item>
-          </el-menu-item-group>
-        </el-submenu>
-        <el-menu-item
-          v-else
-          :key="item.path"
-          :index="item.path"
-        >
-          <i class="el-icon-menu"></i>
-          <span slot="title">{{item.name}}</span>
-        </el-menu-item>
-      </template>
-    </el-menu>
+    <template v-for="item in routeList">
+      <div class="menu-item"
+           :key="item.name">
+        <i :class="`el-icon-${item.meta.icon}`"></i>
+        <p>{{item.meta.title}}</p>
+        <sub-menu v-if="item.children && item.children.length > 0"
+                :routeChildren="item.children"></sub-menu>
+      </div>
+    </template>
   </div>
 </template>
 
 <script>
-  import initRoutes from '@/router/calcAsyncRoutes.js'
-  export default {
-    data() {
-      return {
-        routes: []
-      }
-    },
-    created() {
-      this.$http.get('/getRoutes').then(res =>{
-        this.routes = res
-        const routelist = initRoutes(res)
-        this.$router.addRoutes(routelist)
-        console.log(this.$router)
-      })
-    },
-    methods: {
-      handleOpen(key, path) {
-        this.$router.push('111')
-      }
-    }
+import initRoutes from '@/router/calcAsyncRoutes.js'
+import SubMenu from './SubMenu'
+import { mapGetters, mapMutations } from 'vuex'
+export default {
+  components: {
+    SubMenu
+  },
+  data () {
+    return {}
+  },
+  computed: {
+    ...mapGetters(['routeList'])
+  },
+  created () {
+    this.$http.get('/getRoutes').then(res => {
+      const routelist = initRoutes(res)
+      this.$router.addRoutes(routelist)
+      this['routes/setRoute'](routelist)
+    })
+  },
+  mounted () {
+  },
+  methods: {
+    ...mapMutations(['routes/setRoute'])
   }
+}
 </script>
 
 <style lang="scss" scoped>
+.menu-list {
+  height: auto;
+  .menu-item {
+    height: auto;
+    padding: 10px 0;
+    background: #343848;
+    color: #c1cadc;
+    &.active {
+      color: #fff;
+      background: #5582f3;
+    }
+    i {
+      font-size: 22px;
+    }
+    span {
+      font-size: 13px;
+    }
+  }
+}
 </style>
