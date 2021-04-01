@@ -16,7 +16,7 @@
 
 @font-face {
   font-family: element-icons;
-  src: url(313f7dacf2076822059d2dca26dedfc6.woff) format("woff"), url(4520188144a17fb24a6af28a70dae0ce.ttf) format("truetype");
+  src: url(../../fonts/313f7dacf2076822059d2dca26dedfc6.woff) format("woff"), url(../../fonts/4520188144a17fb24a6af28a70dae0ce.ttf) format("truetype");
   font-weight: 400;
   font-display: "auto";
   font-style: normal;

@@ -1,18 +1,17 @@
+const express = require('express')
+const fs = require('fs')
 const path = require('path')
-const Koa = require('koa')
-const fileServer = require('koa-static')
-const bodyParser = require('koa-bodyparser')
-const Router = require('koa-router')
-const getRoutes = require('./controllers/routes')
+const yaml = require('yamljs')
+const api = require('./controllers/api.js')
+const { connector } = require('swagger-routes-express')
 
-const app = new Koa()
+const port = 3001
+const app = express()
+app.use(express.static('dist'))
+// 读取swagger文件
+console.log(api)
+const apiDefinition = yaml.load(path.resolve(__dirname, 'swagger.yml'))
+const connectSwagger = connector(api, apiDefinition)
+connectSwagger(app)
 
-app.use(bodyParser())
-// 静态文件服务
-app.use(fileServer(path.resolve(__dirname, '../dist/')))
-
-const router = new Router()
-router.get('/getRoutes', getRoutes)
-app.use(router.routes())
-
-app.listen('3001')
+app.listen(port)

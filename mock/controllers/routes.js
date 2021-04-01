@@ -1,5 +1,5 @@
-const getRoutes = ctx => {
-  ctx.body = {
+const getRoutes = (req, res) => {
+  res.json({
     code: 200,
     data: [
       {
@@ -18,7 +18,9 @@ const getRoutes = ctx => {
         ]
       }
     ]
-  }
+  })
 }
 
-module.exports = getRoutes
+module.exports = {
+  getRoutes
+}
