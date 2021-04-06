@@ -10,7 +10,7 @@ function initRoutesChildren (routes) {
     if(route.children && route.children.length > 0) {
       routeItem.children = initRoutesChildren(route.children)
     }
-    childrenRoutes.push(Object.assign({}, routeItem, route))
+    childrenRoutes.push(Object.assign({}, route, routeItem))
   })
   return childrenRoutes
 }
@@ -26,7 +26,7 @@ export default function initRoutes (routes) {
     if (route.children && route.children.length > 0) {
       routeItem.children = initRoutesChildren(route.children)
     }
-    asyncRoute.push(Object.assign({}, routeItem, route))
+    asyncRoute.push(Object.assign({}, route, routeItem))
   })
   return asyncRoute
 }

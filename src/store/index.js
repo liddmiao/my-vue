@@ -3,8 +3,6 @@ import Vuex from 'vuex'
 import modules from './modules/index'
 import getters from './getter'
 
-console.log(modules)
-
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

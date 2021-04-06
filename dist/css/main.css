@@ -1,3 +1,14 @@
+.sub-menu[data-v-05d0d5a2] {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+.sub-menu .menu-item[data-v-05d0d5a2] {
+  height: auto;
+  padding: 10px 0;
+  background: #343848;
+  color: #c1cadc;
+}
 .menu-list[data-v-ae6a156c] {
   height: auto;
 }
@@ -6,6 +17,7 @@
   padding: 10px 0;
   background: #343848;
   color: #c1cadc;
+  position: relative;
 }
 .menu-list .menu-item.active[data-v-ae6a156c] {
   color: #fff;

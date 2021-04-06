@@ -2,7 +2,8 @@
   <div class="menu-list">
     <template v-for="item in routeList">
       <div class="menu-item"
-           :key="item.name">
+           :key="item.name"
+           @click="toRoute(item.name)">
         <i :class="`el-icon-${item.meta.icon}`"></i>
         <p>{{item.meta.title}}</p>
         <sub-menu v-if="item.children && item.children.length > 0"
@@ -33,10 +34,13 @@ export default {
       this['routes/setRoute'](routelist)
     })
   },
-  mounted () {
-  },
   methods: {
-    ...mapMutations(['routes/setRoute'])
+    ...mapMutations(['routes/setRoute']),
+    toRoute(name) {
+      this.$router.push({
+        name
+      })
+    }
   }
 }
 </script>
@@ -49,6 +53,7 @@ export default {
     padding: 10px 0;
     background: #343848;
     color: #c1cadc;
+    position: relative;
     &.active {
       color: #fff;
       background: #5582f3;

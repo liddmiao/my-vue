@@ -1,4 +1,4 @@
-import Home from '@/layout/Home'
+import Home from '@/layout/Home.vue'
 import _import from './import'
 
 export default [

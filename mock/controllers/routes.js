@@ -12,7 +12,7 @@ const getRoutes = (req, res) => {
         children: [
           {
             name: 'child1',
-            path: '/chid1',
+            path: 'child1',
             meta: {
               icon: 'remove',
               title: '子导航1'
@@ -20,7 +20,7 @@ const getRoutes = (req, res) => {
           },
           {
             name: 'child2',
-            path: '/chid2',
+            path: 'child2',
             meta: {
               icon: 'plus',
               title: '子导航2'
