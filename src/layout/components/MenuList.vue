@@ -17,6 +17,7 @@
 import initRoutes from '@/router/calcAsyncRoutes.js'
 import SubMenu from './SubMenu'
 import { mapGetters, mapMutations } from 'vuex'
+import Home from '@/layout/Home'
 export default {
   components: {
     SubMenu
@@ -29,9 +30,9 @@ export default {
   },
   created () {
     this.$http.get('/getRoutes').then(res => {
-      const routelist = initRoutes(res)
-      this.$router.addRoutes(routelist)
-      this['routes/setRoute'](routelist)
+      const routelist1 = initRoutes(res)
+      this.$router.addRoutes(routelist1)
+      this['routes/setRoute'](routelist1)
     })
   },
   methods: {

@@ -5,7 +5,7 @@ function initRoutesChildren (routes) {
   let childrenRoutes = []
   routes.forEach(route => {
     let routeItem = {
-      component: () => _import('components/Transfer')
+      component: _import('components/Transfer')
     }
     if(route.children && route.children.length > 0) {
       routeItem.children = initRoutesChildren(route.children)

@@ -1,4 +1,5 @@
 import staticRoutes from '@/router/staticRoutes'
+import Vue from 'vue'
 
 const namespaced = true
 
